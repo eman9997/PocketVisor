@@ -1,1 +1,1 @@
-# hybird
+# hybrid

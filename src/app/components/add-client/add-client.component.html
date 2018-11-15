@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard
+    </a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Account
+  </div>
+  <div class="card-body">
+
+      <form (ngSubmit)="onsubmit(f)" #f="ngForm">
+
+      <div class="form-group">
+        
+        <label for="Account">Account Type(Example Checking, Savings, Loan, Credit Card)</label>
+        <input 
+          type="text"
+          class="form-control" 
+          name="Account"
+          #clientAccount="ngModel"
+          placeholder="All lower case example 'Checking' "
+          [(ngModel)]="oneaccount.Accounttype" 
+          minlength="2"
+          required
+          >
+      </div>
+
+      <div class="form-group">
+          
+        </div>
+
+        <div class="form-group">
+            <label for="APR">Annual Percentage rate / Interest Yield</label>
+            <input 
+                type="text"
+                class="form-control"
+                name="APR"
+                placeholder="example '13' Dont Put Percent Sign"
+                #clientAPR="ngModel"
+                [(ngModel)]="oneaccount.APR" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="myDate">Date</label>
+            <input 
+              type="text"
+              class="form-control"
+              [(ngModel)]="oneaccount.myDate"
+              name="myDate"
+              placeholder="Today's Date"
+              #clientmyDate = "ngModel"
+              minlength="4"
+              required
+            >
+
+          </div>
+
+          <div class="form-group">
+              <label for="balance">Balance</label>
+              <input 
+                type="number"
+                class="form-control"
+                [(ngModel)]="oneaccount.balance"
+                name="balance"
+                #clientBalance = "ngModel"
+                placeholder="Balance on this account"
+              >
+            </div>
+            <div class="form-group">
+              
+            </div>
+
+          <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+  </div>
+</div>

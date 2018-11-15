@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-users"></i> Accounts</h2>
+  </div>
+  <div class="col-md-6">
+    <h5 class="text-right text-secondary">words here </h5>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Accounts</th>
+      <th>Date</th>
+      <th>Balance</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> Checking </td> <!-- JUST PLACEHOLDERS-->
+      <td> 12/03/09 </td>  <!-- JUST PLACEHOLDERS-->
+      <td> $500 </td>
+      <td><a routerLink="/" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="onFetch()">Fetch</button>
+
+<ng-template #noClients>
+  <hr>
+  <h5>There are no Accounts in the system</h5>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <li *ngFor = "let user of user.glist">
+    {{user}}
+  </li> -->
+  <!-- <button (click)="addToList()">Add</button>
+  <button (click)="onSave()">Save</button>
+  <br><br><br><br><br>
+  <button (click)="onFetch()">Fetch</button>
+  <button (click)="logout()">LOG OUT</button> -->
+
+  <!--  
+  <button (click)="onFetch()">Fetch</button>
+    this is the fetch button that is no longer needed because we are fetching automatically
+    in the constructor it's the line that says this.fetch() if this isnt clear your retarted
+-->
+

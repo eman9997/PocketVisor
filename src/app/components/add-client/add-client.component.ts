@@ -19,7 +19,10 @@ export class AddClientComponent implements OnInit {
   }
 
   user:User;
-  use:User;
+
+  HtmlBalance:number;
+  HtmlAccountType:string;
+  HtmlAPR: number;
 
   
   counter:number=0;
@@ -28,45 +31,46 @@ export class AddClientComponent implements OnInit {
     private router: Router,
     private firebase:FireserveService,
     ) {
+
      this.user={
     email: '',
     nameFirst:'',
     nameLast:'',
 
-    Accounts:{
-      1:{
-        balance: 0,
-        accountType:'',
-        myDate: '',
-        APR: 0,
-    },
-      2:{
-        balance: 0,
-        accountType:'',
-        myDate: '',
-        APR: 0,
-    },
-      3:{
-        balance: 0,
-        accountType:'',
-        myDate: '',
-        APR: 0,
-    }
+    accountType: [],
+    balance: [],
+    APR: []
 
-    }
-   
 
 }
-this.Save();
+
 
 }
 
 onSubmit(form: NgForm) {
 
-   this.user.Accounts
-  const password = form.value.password;
-  this.router.navigate(['/user']);
-this.Save();
+  // this.HtmlBalance = form.value.HtmlBalance;
+  // this.HtmlAccountType = form.value.HtmlaccountType;
+  // this.HtmlAPR = form.value.HtmlAPR;
+
+  this.user.balance.push(this.HtmlBalance);
+  this.user.accountType.push(this.HtmlAccountType);
+  this.user.APR.push(this.HtmlAPR);
+
+
+  console.log("Im woring....YEEAAAAAAHHH");
+  console.log(this.user.balance);
+  console.log(this.user.accountType);
+  console.log(this.user.APR);
+
+  this.user.nameFirst='Emanuel';
+  this.user.nameLast='Fonseca';
+  this.user.email='eman9997@yahoo.com';
+
+
+  this.Save();
+  this.router.navigate(['/dashboard']);
+
 }
 
 
@@ -78,6 +82,8 @@ Save(){
     (error) =>console.log(error)
     );
 }
+
+
 
 
 }

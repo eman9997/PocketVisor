@@ -15,7 +15,7 @@
   </div>
   <div class="card-body">
 
-      <form (ngSubmit)="onsubmit(f)" #f="ngForm">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
       <div class="form-group">
         
@@ -26,7 +26,7 @@
           name="Account"
           #clientAccount="ngModel"
           placeholder="All lower case example 'Checking' "
-          [(ngModel)]="oneaccount.Accounttype" 
+          [(ngModel)]="HtmlAccountType" 
           minlength="2"
           required
           >
@@ -44,31 +44,17 @@
                 name="APR"
                 placeholder="example '13' Dont Put Percent Sign"
                 #clientAPR="ngModel"
-                [(ngModel)]="oneaccount.APR" 
+                [(ngModel)]="HtmlAPR" 
             >
         </div>
 
-        <div class="form-group">
-            <label for="myDate">Date</label>
-            <input 
-              type="text"
-              class="form-control"
-              [(ngModel)]="oneaccount.myDate"
-              name="myDate"
-              placeholder="Today's Date"
-              #clientmyDate = "ngModel"
-              minlength="4"
-              required
-            >
-
-          </div>
 
           <div class="form-group">
               <label for="balance">Balance</label>
               <input 
                 type="number"
                 class="form-control"
-                [(ngModel)]="oneaccount.balance"
+                [(ngModel)]="HtmlBalance"
                 name="balance"
                 #clientBalance = "ngModel"
                 placeholder="Balance on this account"

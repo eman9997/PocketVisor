@@ -15,10 +15,9 @@ export class FireserveService {
     constructor(private http: Http,private uidFromUser: AuthService) { }
 
     storeServers(servers: User){
-      
-      //www.google.com/dog
-      //ww.google.com/cats
- return this.http.put('https://list-86b44.firebaseio.com/'+this.uidFromUser.getUid()+'/data.json', servers);
+    
+       return this.http.put('https://list-86b44.firebaseio.com/'+this.uidFromUser.getUid()+'/data.json', servers);
+       
     }
     getlist(){
 

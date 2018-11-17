@@ -24,9 +24,6 @@ export class AddClientComponent implements OnInit {
   HtmlAccountType:string;
   HtmlAPR: number;
 
-  
-  counter:number=0;
-
   constructor(
     private router: Router,
     private firebase:FireserveService,
@@ -36,15 +33,11 @@ export class AddClientComponent implements OnInit {
     email: '',
     nameFirst:'',
     nameLast:'',
-
     accountType: [],
     balance: [],
     APR: []
-
-
 }
-
-
+this.onFetch();
 }
 
 onSubmit(form: NgForm) {
@@ -53,21 +46,18 @@ onSubmit(form: NgForm) {
   // this.HtmlAccountType = form.value.HtmlaccountType;
   // this.HtmlAPR = form.value.HtmlAPR;
 
-  this.user.balance.push(this.HtmlBalance);
-  this.user.accountType.push(this.HtmlAccountType);
-  this.user.APR.push(this.HtmlAPR);
 
+console.log(this.user);
 
-  console.log("Im woring....YEEAAAAAAHHH");
-  console.log(this.user.balance);
-  console.log(this.user.accountType);
-  console.log(this.user.APR);
-
+  this.user.balance.unshift(this.HtmlBalance);
+  this.user.accountType.unshift(this.HtmlAccountType);
+  this.user.APR.unshift(this.HtmlAPR);
   this.user.nameFirst='Emanuel';
   this.user.nameLast='Fonseca';
   this.user.email='eman9997@yahoo.com';
 
-
+  console.log(this.user);
+  
   this.Save();
   this.router.navigate(['/dashboard']);
 
@@ -82,7 +72,13 @@ Save(){
     (error) =>console.log(error)
     );
 }
-
+onFetch(){
+  this.firebase.getlist()
+  .subscribe(
+    (servers: User) =>this.user=servers,
+    (error)=> console.log(error)
+  );
+  }
 
 
 

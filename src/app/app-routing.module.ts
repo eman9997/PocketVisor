@@ -9,11 +9,10 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent },
+  {path: '', component: SigninComponent },
   {path: 'signup', component: SignupComponent },
   {path: 'dashboard', component: DashboardComponent },
   {path: 'addclient', component: AddClientComponent },
-  {path: 'signin', component: SigninComponent },
   
 ]
 

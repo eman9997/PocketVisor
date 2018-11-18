@@ -5,7 +5,7 @@ import{AuthService} from '../auth/auth.service'
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FireserveService } from '../../services/fireserve.service';
-
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -14,12 +14,9 @@ import { FireserveService } from '../../services/fireserve.service';
   styleUrls: ['./add-client.component.scss']
 })
 export class AddClientComponent implements OnInit {
-  ngOnInit(){
-   
-  }
+
 
   user:User;
-
   HtmlBalance:number;
   HtmlAccountType:string;
   HtmlAPR: number;
@@ -27,27 +24,17 @@ export class AddClientComponent implements OnInit {
   constructor(
     private router: Router,
     private firebase:FireserveService,
+    private serserv: UserService
     ) {
-
-     this.user={
-    email: '',
-    nameFirst:'',
-    nameLast:'',
-    accountType: [],
-    balance: [],
-    APR: []
+     this.user=this.serserv.model();
+     this.onFetch();
 }
-this.onFetch();
+ngOnInit(){
+  
 }
 
 onSubmit(form: NgForm) {
 
-  // this.HtmlBalance = form.value.HtmlBalance;
-  // this.HtmlAccountType = form.value.HtmlaccountType;
-  // this.HtmlAPR = form.value.HtmlAPR;
-
-
-console.log(this.user);
 
   this.user.balance.unshift(this.HtmlBalance);
   this.user.accountType.unshift(this.HtmlAccountType);
@@ -55,31 +42,20 @@ console.log(this.user);
   this.user.nameFirst='Emanuel';
   this.user.nameLast='Fonseca';
   this.user.email='eman9997@yahoo.com';
-
-  console.log(this.user);
   
-  this.Save();
+  this.serserv.save(this.user);
   this.router.navigate(['/dashboard']);
 
 }
 
-
-
-Save(){
-  this.firebase.storeServers(this.user)
-  .subscribe(
-    (response) =>console.log(response),
-    (error) =>console.log(error)
-    );
-}
 onFetch(){
   this.firebase.getlist()
   .subscribe(
     (servers: User) =>this.user=servers,
     (error)=> console.log(error)
   );
-  }
 
+  }
 
 
 }

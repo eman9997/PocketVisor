@@ -18,12 +18,26 @@ export class UserService {
       );
 
   }
-  onFetch(user: User){
+  onFetch():User{
     this.fire.getlist()
     .subscribe(
-      (servers: User) =>user=servers,
+      (servers: User) =>this.user=servers,
       (error)=> console.log(error)
     );
+    return this.user;
   }
+  model(){
+
+    this.user={
+      email: '',
+      nameFirst:'',
+      nameLast:'',
+      accountType: [],
+      balance: [],
+      APR: []
+  }
+    return this.user;
+  }
+  
 
 }

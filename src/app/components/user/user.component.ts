@@ -4,6 +4,8 @@ import {User} from './../../models/user.model';
 import {FireserveService} from './../../services/fireserve.service';
 import{AuthService} from '../auth/auth.service'
 import {Router} from '@angular/router'
+import { UserService } from '../../services/user.service';
+
 
 
 @Component({
@@ -15,14 +17,19 @@ export class UserComponent implements OnInit {
 
 user:User;
 
-  constructor(  private fire:FireserveService,private ServiceToLoggout: AuthService,
-    private ru:Router 
-    ) {
+  constructor(  
+    private fire:FireserveService,
+    private ServiceToLoggout: AuthService,
+    private ru:Router,
+    private serv: UserService
+    ){
+      this.user=this.serv.model();
+      
 
      }
 
   ngOnInit() {
-    
+   // this.onFetch;
     
   }
 

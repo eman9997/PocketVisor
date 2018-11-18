@@ -8,7 +8,7 @@ import {FormsModule} from '@angular/forms'
 import {environment} from '../environments/environment';
 import {FireserveService} from './services/fireserve.service';
 
-import{HttpModule} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -17,6 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
+import {UserService} from './services/user.service';
+
 
 
 
@@ -39,7 +41,7 @@ import { AddClientComponent } from './components/add-client/add-client.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [FireserveService, AuthService],
+  providers: [FireserveService, AuthService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

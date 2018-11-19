@@ -17,6 +17,7 @@ export class AddClientComponent implements OnInit {
 
 
   user:User;
+  helper:string;
   HtmlBalance:number;
   HtmlAccountType:string;
   HtmlAPR: number;
@@ -35,16 +36,18 @@ ngOnInit(){
 
 onSubmit(form: NgForm) {
 
-
-  this.user.balance.unshift(this.HtmlBalance);
-  this.user.accountType.unshift(this.HtmlAccountType);
-  this.user.APR.unshift(this.HtmlAPR);
+  this.helper=this.HtmlAccountType.toLocaleUpperCase();
+  this.HtmlAccountType=this.helper;
+  this.user.balance.push(this.HtmlBalance);
+  this.user.accountType.push(this.HtmlAccountType);
+  this.user.APR.push(this.HtmlAPR);
   this.user.nameFirst='Emanuel';
   this.user.nameLast='Fonseca';
   this.user.email='eman9997@yahoo.com';
   
   this.serserv.save(this.user);
-  this.router.navigate(['/dashboard']);
+  this.router.navigate(['/addclient']);
+ 
 
 }
 

@@ -25,18 +25,11 @@ user:User;
     ){
       this.user=this.serv.model();
       
-
      }
 
   ngOnInit() {
-    this.onFetch;
+    this.onFetch();
 
-  //   for(){}
-  //   const HEROES = [
-  //     {id: 1, name:'Superman'},
-  // ];
-
-    
   }
 
   login(){

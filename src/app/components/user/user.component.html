@@ -6,30 +6,45 @@
     <h5 class="text-right text-secondary">words here </h5>
   </div>
 </div>
-<table class="table table-striped" *ngFor="let balance of user.balance">
-  <thead class="thead-inverse">
+<table class="table table-striped">
+  <thead>
     <tr>
       <th>Accounts</th>
       <th>APR</th>
       <th >Balance</th>
-      <th></th>
+    
     </tr>
+    
   </thead>
-  <!-- <tbody *ngFor="let type of user.accountType"> -->
-    <tr *ngFor="let apr of user.APR">
-      <td> {{type}} </td> 
-      <td> {{apr}} </td>
-      <td> {{balance}}</td>
-      <td><a routerLink="/" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
-    </tr>
-  <!-- </tbody> -->
+   <tbody>
+<div class=wrap>
+  <div class= "type">
+      <tr *ngFor="let type of user.accountType">
+        <td> {{type}} </td> 
+      </tr>
+    </div>
+  <div class="apr">
+      <tr *ngFor="let apr of user.APR">
+        <td> {{apr}} </td>
+      </tr>
+    </div>
+
+  <div class ="balance">
+      <tr *ngFor="let balances of user.balance">
+        <td> {{balances}} </td>
+        <td><a routerLink="/" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+      </tr>
+      
+</div>
+
+
+</div>
+
+  </tbody>
 </table>
+
 <button (click)="onFetch()">Fetch</button>
 
-<ng-template #noClients>
-  <hr>
-  <h5>There are no Accounts in the system</h5>
-</ng-template>
 
 
 
@@ -41,20 +56,4 @@
 
 
 
-
-
-  <!-- <li *ngFor = "let user of user.glist">
-    {{user}}
-  </li> -->
-  <!-- <button (click)="addToList()">Add</button>
-  <button (click)="onSave()">Save</button>
-  <br><br><br><br><br>
-  <button (click)="onFetch()">Fetch</button>
-  <button (click)="logout()">LOG OUT</button> -->
-
-  <!--  
-  <button (click)="onFetch()">Fetch</button>
-    this is the fetch button that is no longer needed because we are fetching automatically
-    in the constructor it's the line that says this.fetch() if this isnt clear your retarted
--->
 

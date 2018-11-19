@@ -29,7 +29,13 @@ user:User;
      }
 
   ngOnInit() {
-   // this.onFetch;
+    this.onFetch;
+
+  //   for(){}
+  //   const HEROES = [
+  //     {id: 1, name:'Superman'},
+  // ];
+
     
   }
 

@@ -18,6 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import {UserService} from './services/user.service';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { GlossaryComponent } from './components/glossary/glossary.component';
 
 
 
@@ -32,7 +34,9 @@ import {UserService} from './services/user.service';
     DashboardComponent,
     NavbarComponent,
     SidebarComponent,
-    AddClientComponent
+    AddClientComponent,
+    PageNotFoundComponent,
+    GlossaryComponent
   ],
   imports: [
     BrowserModule,

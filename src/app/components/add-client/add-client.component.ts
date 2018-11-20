@@ -36,14 +36,17 @@ export class AddClientComponent implements OnInit {
     ) {
 
      this.user=this.serserv.model();
-
+    
+  // This array.length==0 || array.length==null dont fetch
+  // because feching on null breaks the code
+     this.onFetch();
      
 
 }
 
 ngOnInit(){
 
-  this.onFetch();
+  
 }
 
 
@@ -52,9 +55,10 @@ onSubmit(form: NgForm) {
 
   this.helper=this.HtmlAccountType.toLocaleUpperCase();
   this.HtmlAccountType=this.helper;
-  this.user.balance.push(this.HtmlBalance);
-  this.user.accountType.push(this.HtmlAccountType);
-  this.user.APR.push(this.HtmlAPR);
+
+  this.user.balance.unshift(this.HtmlBalance);
+  this.user.accountType.unshift(this.HtmlAccountType);
+  this.user.APR.unshift(this.HtmlAPR);
 
 
   this.user.nameFirst='Emanuel';

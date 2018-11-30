@@ -14,6 +14,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
+  inde: number;
 
 user:User;
 
@@ -59,6 +60,15 @@ user:User;
  logout(){
   this.ServiceToLoggout.set_uid();
     this.ru.navigate(['/signin']);
+ }
+ onedit(i){
+  this.inde=i;
+
+  this.user.APR.splice(this.inde,1);
+  this.user.balance.splice(this.inde,1);
+  this.user.accountType.splice(this.inde,1);
+  this.onSave();
+
  }
 
 }

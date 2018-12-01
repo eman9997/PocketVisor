@@ -66,7 +66,7 @@ onSubmit(form: NgForm) {
   this.user.email='eman9997@yahoo.com';
 
     this.serserv.save(this.user);
-  this.router.navigate(['/dashboard']);
+  this.router.navigate(['/glossary']);
 
 
 }

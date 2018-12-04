@@ -20,6 +20,7 @@ import { AddClientComponent } from './components/add-client/add-client.component
 import {UserService} from './services/user.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GlossaryComponent } from './components/glossary/glossary.component';
+import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 
 
 
@@ -36,7 +37,8 @@ import { GlossaryComponent } from './components/glossary/glossary.component';
     SidebarComponent,
     AddClientComponent,
     PageNotFoundComponent,
-    GlossaryComponent
+    GlossaryComponent,
+    SavemoneyComponent
   ],
   imports: [
     BrowserModule,

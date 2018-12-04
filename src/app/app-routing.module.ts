@@ -6,6 +6,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GlossaryComponent } from './components/glossary/glossary.component';
+import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent },
   {path: 'dashboard', component: DashboardComponent },
   {path: 'addclient', component: AddClientComponent },
+  {path: 'savemoney', component: SavemoneyComponent},
   {path: 'glossary', component: GlossaryComponent},
   {path: '**', component: PageNotFoundComponent },
 ]

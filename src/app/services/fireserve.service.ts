@@ -33,8 +33,6 @@ export class FireserveService {
           return Observable.throw(console.log(Response));
         }
       );
-    
-
     }
 
   

@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import {User} from './../../models/user.model';
 import { FireserveService } from '../../services/fireserve.service';
-import { timer } from 'rxjs/observable/timer';
-import { Server } from 'selenium-webdriver/safari';
-
-
 
 
 
@@ -16,9 +12,14 @@ import { Server } from 'selenium-webdriver/safari';
   styleUrls: ['./savemoney.component.scss']
 })
 export class SavemoneyComponent implements OnInit {
+  recommend:string[];  // where all the results are
+ 
+  loanPrime:number=8;
+  helocPrime:number=5;
+  cdPrime:number=2;
+  buget:number=3000;
   user:User;
-  recommend:string[];
-  i:number;
+  needsLoan:string='Your spending too much money on Interest you will save money if you got a loan';
 
   constructor(
     private use: UserService,
@@ -27,29 +28,41 @@ export class SavemoneyComponent implements OnInit {
 
   ngOnInit() {
     this.user=this.use.model();
+    this.recommend=[];
     
     this.firebase.getlist().subscribe(
       (server:User)=>{
         this.user=server;
-        this.save();
+        this.savemoney();
       },
       (error)=> console.log(error)
     );
 
-    this.save();
+   
   }
 
-  // onFetch(){
-  //   this.firebase.getlist()
-  //   .subscribe(
-  //     (servers: User) =>this.user=servers,
-  //     (error)=> console.log(error)
-  //   );
-  //   }
-  save(){
 
- console.log(this.user.balance[1]);
+  savemoney(){
+    var i;
+   for(i=0; i<this.user.balance.length; i++){
+    // this.user.balance[i];
+    // this.user.accountType[i];
+    // this.user.APR[i];
 
-}  // end of save method
+        // checking if a loan is needed
+      if(this.user.APR[i]>10){
+        this.addtoArray(this.needsLoan);
+          console.log('I found an APR Greater than 10');
+      }
+   } // end of For loop
+   console.log(this.recommend);
+}  
+
+  Loan(APR){
+
+  }
+  addtoArray(str){
+    this.recommend.push(str);
+  }
 
 }

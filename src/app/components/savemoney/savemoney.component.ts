@@ -4,8 +4,6 @@ import {User} from './../../models/user.model';
 import { FireserveService } from '../../services/fireserve.service';
 
 
-
-
 @Component({
   selector: 'app-savemoney',
   templateUrl: './savemoney.component.html',
@@ -13,10 +11,11 @@ import { FireserveService } from '../../services/fireserve.service';
 })
 export class SavemoneyComponent implements OnInit {
   recommend:string[];  // where all the results are
- 
+   
+  myset:any;
   loanPrime:number=8;
   helocPrime:number=5;
-  mortPrime:number=4.5;
+  mortPrime:number=4.7;
   cdPrime:number=2;
   buget:number=3000;
   user:User;
@@ -25,7 +24,9 @@ export class SavemoneyComponent implements OnInit {
 
   needsbalancetransfer:string='Your spending too much money on Interest you will save money if you did a balance transfer. If you think you can pay back your debt in a couple of months 6-20 months this is a good option. If you need more details check the glossary';
 
-  needsSavings:string='You should move some Money to your savings or a CD. Ther rate for a cd is at least '+this.cdPrime+'% right now';
+  needsSavings:string='You should move some Money to your savings or a CD. The rate for a cd is at least '+this.cdPrime+'% right now';
+
+ 
 
 
   constructor(
@@ -65,45 +66,34 @@ export class SavemoneyComponent implements OnInit {
         this.addtoArray(this.needsbalancetransfer);
       }
       // savings account
-      if(this.user.balance[i] >this.buget && this.user.accountType[i] ==='CHECKING'){
-        this.addtoArray(this.needsbalancetransfer);
+    //  this.user.balance[i] >this.buget && 
+      if(this.user.balance[i] >this.buget && this.user.accountType[i] =='CHECKING'){
+        this.addtoArray(this.needsSavings);
+      }
+      // Refinance
+      if(this.user.APR[i]>this.mortPrime+1 && this.user.accountType[i] =='MORTGAGE'){
+        this.addtoArray(this.needsSavings);
       }
       
-   } 
+   } // end of for loop
    
-   
-   
+   this.createunique();
+   console.log(this.recommend);
 }  
 
-  Loan(APR){
-
-  }
+ 
   addtoArray(str){
     this.recommend.push(str);
   }
+  createunique(){
 
-  makeunique(){
-    var uniquesArray = [];
-var counting = 0;
-var found = false;
-var i;
-var y;
+    this.myset=new Set(this.recommend);
+    this.recommend=Array.from(this.myset);
 
-
-for (i = 0; i < this.recommend.length; i++) {
-	for (y = 0; y < uniquesArray.length; y++) {
-		if ( this.recommend[i] == uniquesArray[y] ) {
-			found = true;
-		}
-	}
-	counting++;
-	if (counting == 1 && found == false) {
-		uniquesArray.push(this.recommend[i]);
-	}
-	found = false;
-	counting = 0;
-}
-    return uniquesArray;
+   // this.recommend=this.myset;
+  // let array = Array.from(mySet);
   }
+
+ 
 
 }

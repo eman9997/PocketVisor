@@ -1,11 +1,47 @@
-<h4>
+<!-- <h4 class='title'>
   Your recommenditon based off your information
 </h4>
 
-<ul *ngFor ="let user of recommend; let i=index">
-  
-  <p>
+<div class="card" *ngFor ="let user of recommend; let i=index" class="card">
+  <div class="card-body">
   {{user}}
-  </p>
+  </div>
+</div> -->
 
-</ul>
+ <!-- <div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div> -->
+
+
+<!-- <div class="card" *ngFor ="let user of recommend; let i=index" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{i+1}}. Recommenditon</h5>
+   
+
+    <p class="card-text"> {{user}}</p>
+    <a routerLink='/glossary' class="card-link">What's This?</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div> -->
+
+
+
+<div class="card text-center">
+  <div class="col-sm-6">
+    <div class="card" *ngFor ="let user of recommend; let i=index">
+      <div class="card-body">
+        <h5 class="card-title">{{i+1}}. Recommenditon</h5>
+        <p class="card-text">{{user}}</p>
+        <a href="#" class="btn btn-primary">What's this</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

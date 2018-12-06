@@ -26,7 +26,8 @@ export class SavemoneyComponent implements OnInit {
 
   needsSavings:string='You should move some Money to your savings or a CD. The rate for a cd is at least '+this.cdPrime+'% right now';
 
- 
+  needsRefinance:string='';
+
 
 
   constructor(

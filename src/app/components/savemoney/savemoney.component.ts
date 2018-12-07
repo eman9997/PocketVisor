@@ -20,11 +20,11 @@ export class SavemoneyComponent implements OnInit {
   buget:number=3000;
   user:User;
 
-  needsLoan:string='Your spending too much money on Interest you will save money if you got a loan. A Loans interest is only '+this.loanPrime+'% right now. If your still having trouble you can refer to the glossary located on dashboard page';
+  needsLoan:string='Your spending Too Much Money on Interest you will save money if you got a Loan. A Loans interest is only '+this.loanPrime+'% right now. If your still having trouble you can refer to the glossary located on dashboard page';
 
   needsbalancetransfer:string='Your spending too much money on Interest you will save money if you did a balance transfer. If you think you can pay back your debt in a couple of months 6-20 months this is a good option. If you need more details check the glossary';
 
-  needsSavings:string='You should move some Money to your savings or a CD. The rate for a cd is at least '+this.cdPrime+'% right now';
+  needsSavings:string='You should move some Money to your savings or a CD. The rate for a CD is at Least '+this.cdPrime+'% Right Now';
 
   needsRefinance:string='';
 

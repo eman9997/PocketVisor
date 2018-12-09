@@ -1,96 +1,88 @@
-.wrap{
-    background-color: rgb(255, 230, 191);
-     padding: 0%;
-     font-size: .6em;
-     font-weight: bold;
-    
- }
- 
- .type{
-     float: left;
-     padding-right: 3%;
-     background-color: rgb(255, 230, 191);
+
+    // .wrap{
+    //     background-color: rgb(255, 230, 191);
+    //      padding: 0%;
+    //      font-size: 1.4em;
+    //      font-weight: bold;
+    //  }
      
- }
- .apr{
-     float: left;
-     padding-right: 3%;
-     background-color: rgb(255, 230, 191);
- }
- .balance{
-     float: left;
-     background-color: rgb(255, 230, 191);
-    
- }
- th{
-     float: left;
-     padding-right: 5%;
- }
-
-  
-
-
-@media screen and (min-width: 480px) {
-   
-    .wrap{
-        background-color: rgb(255, 230, 191);
-         padding: 0%;
-         font-size: .9em;
-         font-weight: bold;
-        
-     }
-     
-     .type{
-         float: left;
-         padding-right: 9%;
-         background-color: rgb(255, 230, 191);
+    //  .type{
+    //      float: left;
+    //      padding-right: 9%;
+    //      background-color: rgb(255, 230, 191);
          
-     }
-     .apr{
-         float: left;
-         padding-right: 9%;
-         background-color: rgb(255, 230, 191);
-     }
-     .balance{
-         float: left;
-         background-color: rgb(255, 230, 191);
+    //  }
+    //  .apr{
+    //      float: left;
+    //      padding-right: 9%;
+    //      background-color: rgb(255, 230, 191);
+    //  }
+    //  .balance{
+    //      float: left;
+    //      background-color: rgb(255, 230, 191);
         
-     }
-     th{
-         float: left;
-         padding-right: 9%;
-     }
-  }
+    //  }
+    //  th{
+    //      float: left;
+    //      padding-right: 9%;
+    //  }
   
-  /***** For Desktop Monitors *******/
-  @media screen and (min-width: 768px) {
-    
-    .wrap{
-        background-color: rgb(255, 230, 191);
-         padding: 0%;
-         font-size: 1.4em;
-         font-weight: bold;
+    // .largebox{
+    //     width: 800px;
+    //     height: 350px;
+    //     padding: 0%;
+    //     font-size: 1.4em;
+    //     font-weight: bold;
+
+    // }
+    // .box1{
+    //     width: 210px;
+       
+    //     float: left;
+    // }
+    // .box2{
+    //     width: 210px;
         
-     }
-     
-     .type{
-         float: left;
-         padding-right: 15%;
-         background-color: rgb(255, 230, 191);
-         
-     }
-     .apr{
-         float: left;
-         padding-right: 15%;
-         background-color: rgb(255, 230, 191);
-     }
-     .balance{
-         float: left;
-         background-color: rgb(255, 230, 191);
+    //     float: left;
+    // }
+    // .box3{
+    //     width: 210px;
+      
+    //     float: left;
+    // }
+    // th{
+    //     float: left;
+    //     padding-right: 9%;
+    // }
+
+
+    .largebox{
+        width: 110vw;
+        height: 110vh;
+        padding: 0%;
+        font-size: 1.4em;
+        font-weight: bold;
+       
+
+    }
+    .box1{
+        width: 18%;
+        float: left;
+       
+    }
+    .box2{
+        width: 18%;
+        float: left;
         
-     }
-     th{
-         float: left;
-         padding-right: 15%;
-     }
-  }
+    }
+    .box3{
+        width: 18%;
+        height: 18%;
+        float: left;
+        
+    }
+    th{
+        float: left;
+        padding-right: 12%;
+        
+    }

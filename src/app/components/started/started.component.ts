@@ -21,6 +21,11 @@ export class StartedComponent implements OnInit {
       
       this.user=this.serserv.dummy();
       console.log(this.user);
+      this.user.nameFirst='Emanuel';
+      this.user.nameLast='Fonseca';
+      this.user.email='eman9997@yahoo.com';
+    
+        this.serserv.save(this.user);
 
     }
 
@@ -33,9 +38,9 @@ export class StartedComponent implements OnInit {
     this.user.nameLast='Fonseca';
     this.user.email='eman9997@yahoo.com';
   
-      this.serserv.save(this.user);
+    this.serserv.save(this.user);
 
-    this.router.navigate(['/glossary']);
+    this.router.navigate(['/dashboard']);
   
   
   }

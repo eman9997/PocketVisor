@@ -11,13 +11,15 @@ import { AuthService } from '../auth.service';
 })
 export class SigninComponent {
 
-  constructor(private authService: AuthService,private router: Router) { }
+  constructor(private authService: AuthService,private router: Router) { 
+    authService.set_uid();
+  }
 
   onSignin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signinUser(email, password);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/glossary']);
   }
   
 }

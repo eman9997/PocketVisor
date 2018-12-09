@@ -27,6 +27,7 @@ import { StartedComponent } from './components/started/started.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { StartedComponent } from './components/started/started.component';
     PageNotFoundComponent,
     GlossaryComponent,
     SavemoneyComponent,
-    StartedComponent
+    StartedComponent,
+    
   ],
   imports: [
     BrowserModule,

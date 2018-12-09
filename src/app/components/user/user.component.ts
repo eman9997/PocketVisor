@@ -5,6 +5,7 @@ import {FireserveService} from './../../services/fireserve.service';
 import{AuthService} from '../auth/auth.service'
 import {Router} from '@angular/router'
 import { UserService } from '../../services/user.service';
+import { timeInterval } from 'rxjs/operator/timeInterval';
 
 
 
@@ -29,7 +30,15 @@ user:User;
      }
 
   ngOnInit() {
-    this.onFetch();
+   
+    this.fire.getlist().subscribe(
+      (server:User)=>{
+      
+        this.user=server;
+        
+      },
+      (error)=> console.log(error)
+    );
 
  
 
@@ -47,13 +56,9 @@ user:User;
       (error) =>console.log(error)
       );
   }
-  onFetch(){
-    this.fire.getlist()
-    .subscribe(
-      (servers: User) =>this.user=servers,
-      (error)=> console.log(error)
-    );
-  }
+ 
+    
+
  logout(){
   this.ServiceToLoggout.set_uid();
     this.ru.navigate(['/signin']);

@@ -22,7 +22,7 @@ export class AuthService {
       .catch(
         error => console.log(error)
       );
-      this.value = firebase.auth().currentUser.uid;
+     
    //   console.log(this.value); this worked
   }
   getUid():string{

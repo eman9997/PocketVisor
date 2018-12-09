@@ -7,7 +7,9 @@ import { AddClientComponent } from './components/add-client/add-client.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
+import { StartedComponent } from './components/started/started.component';
 
+StartedComponent
 
 const routes: Routes = [
   {path: '', component: SigninComponent },
@@ -16,6 +18,7 @@ const routes: Routes = [
   {path: 'addclient', component: AddClientComponent },
   {path: 'savemoney', component: SavemoneyComponent},
   {path: 'glossary', component: GlossaryComponent},
+  {path: 'started', component: StartedComponent},
   {path: '**', component: PageNotFoundComponent },
 ]
 

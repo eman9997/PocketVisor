@@ -38,6 +38,22 @@ export class UserService {
   }
     return this.user;
   }
+  dummy(){
+    this.user={
+      email: '',
+      nameFirst:'',
+      nameLast:'',
+      accountType: [],
+      balance: [],
+      APR: []
+  }
+  this.user.accountType.push("example");
+  this.user.APR.push(99);
+  this.user.balance.push(99999);
+ 
+
+    return this.user;
+  }
 
 
 }

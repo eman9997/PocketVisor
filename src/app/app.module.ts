@@ -21,6 +21,7 @@ import {UserService} from './services/user.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
+import { StartedComponent } from './components/started/started.component';
 
 
 
@@ -38,7 +39,8 @@ import { SavemoneyComponent } from './components/savemoney/savemoney.component';
     AddClientComponent,
     PageNotFoundComponent,
     GlossaryComponent,
-    SavemoneyComponent
+    SavemoneyComponent,
+    StartedComponent
   ],
   imports: [
     BrowserModule,

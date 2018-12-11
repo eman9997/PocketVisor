@@ -66,11 +66,17 @@ export class SavemoneyComponent implements OnInit {
 
         // checking if a loan is needed
       if(this.user.APR[i]>this.loanPrime+2 && this.user.balance[i]>this.buget){
-        this.addtoArray(this.needsLoan);
+        if(this.user.accountType[i] =='CREDIT CARD'){
+          this.addtoArray(this.needsLoan);
+         }
+       
       }
       // needs a balance transfer
      if(this.user.APR[i]>this.loanPrime+2  && this.user.balance[i]>this.buget){
+       if(this.user.accountType[i] =='CREDIT CARD'){
         this.addtoArray(this.needsbalancetransfer);
+       }
+         
       }
       // savings account
       if(this.user.balance[i] >this.buget && this.user.accountType[i] =='CHECKING'){

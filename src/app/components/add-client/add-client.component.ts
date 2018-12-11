@@ -65,8 +65,18 @@ onSubmit(form: NgForm) {
   this.user.nameLast='Fonseca';
   this.user.email='eman9997@yahoo.com';
 
-    this.serserv.save(this.user);
-  this.router.navigate(['/glossary']);
+  //  this.serserv.save(this.user);
+
+  this.firebase.storeServers(this.user)
+  .subscribe((response) =>{
+
+    console.log(response)
+    this.router.navigate(['/dashboard']);
+  }
+    );
+
+    
+ 
 
 
 }

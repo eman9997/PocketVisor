@@ -95,7 +95,7 @@ export class SavemoneyComponent implements OnInit {
         this.addtoArray(this.needsLoanRefi);
       }
       //Heloc
-      if(this.user.accountType[i] =='CREDIT CARD'){
+      if(this.user.accountType[i] =='CREDIT CARD' || this.user.accountType[i] =='LOAN'){
           this.calculateHeloc(this.user.balance[i]);
             if(this.helocBoo){
               if(this.check()){
@@ -103,9 +103,7 @@ export class SavemoneyComponent implements OnInit {
               }
             }
       } // end of HELOC Method
-
-      // needs nothing I will Code This on HTML
-     
+    
       
    } // end of for loop
    

@@ -27,10 +27,11 @@ export class AuthService {
   }
   getUid():string{
     return this.value=firebase.auth().currentUser.uid;
+    
   }
 
   log_out(){
-    this.value=null;
+    firebase.auth().signOut;
    }
    set_uid(){
      this.value=null;

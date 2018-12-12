@@ -59,10 +59,11 @@ user:User;
  
     
 
- logout(){
-  this.ServiceToLoggout.set_uid();
-    this.ru.navigate(['/signin']);
- }
+//  logout(){
+//   this.ServiceToLoggout.log_out;
+
+//     this.ru.navigate(['/']);
+//  }
  onedit(i){
   this.inde=i;
 

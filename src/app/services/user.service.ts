@@ -47,6 +47,7 @@ export class UserService {
       balance: [],
       APR: []
   }
+  
   this.user.accountType.push("example");
   this.user.APR.push(99);
   this.user.balance.push(99999);

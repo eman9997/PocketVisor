@@ -12,7 +12,9 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private logservice:AuthService
+    private logservice:AuthService,
+    
+    
 
   ) { }
 
@@ -21,7 +23,7 @@ export class SidebarComponent implements OnInit {
   }
 
   logoff(){
-    this.logservice.set_uid();
-    this.router.navigate(['/signup']);
+    this.logservice.log_out;
+    this.router.navigate(['/']);
   }
 }

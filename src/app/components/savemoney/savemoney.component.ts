@@ -58,7 +58,6 @@ export class SavemoneyComponent implements OnInit {
    
   }
 
-
   savemoney(){
     var i;
    for(i=0; i<this.user.balance.length; i++){

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthService {
   value:string;
+  token:string;
   constructor(private ru:Router){ }
   
 
@@ -22,8 +23,14 @@ export class AuthService {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response =>{
-          console.log(response)
-          this.ru.navigate(['/dashboard']);
+    
+          firebase.auth().currentUser.getIdToken()
+          .then(
+            (token: string) =>{
+              this.token=token
+              this.ru.navigate(['/dashboard']);
+            } 
+          )
         } 
       )
       .catch(
@@ -42,6 +49,14 @@ export class AuthService {
    }
    set_uid(){
      this.value=null;
+   }
+   getToken(){
+    firebase.auth().currentUser.getIdToken()
+     .then(
+      (token: string) =>
+        this.token=token
+     );
+     return this.token;
    }
   
 }

@@ -34,7 +34,7 @@ export class AuthService {
         } 
       )
       .catch(
-        error => console.log(error)
+        error => console.log("I show up when you dont get logged in")
       );
      
    //   console.log(this.value); this worked

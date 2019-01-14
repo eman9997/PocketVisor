@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FireserveService } from '../../services/fireserve.service';
 import { UserService } from '../../services/user.service';
+import { Server } from 'selenium-webdriver/safari';
 
 
 
@@ -35,7 +36,7 @@ export class AddClientComponent implements OnInit {
 
     ) {
 
-     this.user=this.serserv.model();
+      this.user=this.serserv.model();
     
   // This array.length==0 || array.length==null dont fetch
   // because feching on null breaks the code
@@ -87,16 +88,27 @@ onFetch(){
 
   this.firebase.getlist()
   .subscribe(
-    (servers: User) =>this.user=servers,
-    (error)=> console.log(error)
-
+    (servers: User) =>{
+      if (servers.balance === undefined || servers.balance.length == 0) {
+        this.user=this.serserv.model();
+        console.log(servers.balance);
+       }
+       if (servers.balance.length > 0) {
+        this.user=servers
+        console.log(servers.balance);
+       }
+      (error)=>{
+        console.log(error) 
+      }  
+    }
+    
   );
-
-
 
   }
 
+check(){
 
+}
 
 
 

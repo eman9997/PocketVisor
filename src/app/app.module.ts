@@ -22,6 +22,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 import { StartedComponent } from './components/started/started.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 
@@ -47,6 +48,7 @@ import { StartedComponent } from './components/started/started.component';
   imports: [
     BrowserModule,
     FormsModule,
+    FlashMessagesModule.forRoot(),
     HttpClientModule,
     HttpModule,
     AppRoutingModule

@@ -19,14 +19,8 @@ export class StartedComponent implements OnInit {
     private router: Router,
     ) { 
       
-      this.user=this.serserv.dummy();
-      console.log(this.user);
-      this.user.nameFirst='Emanuel';
-      this.user.nameLast='Fonseca';
-      this.user.email='eman9997@yahoo.com';
-    
-        this.serserv.save(this.user);
-
+     // this.user=this.serserv.dummy();
+   
     }
 
   ngOnInit() {
@@ -34,11 +28,6 @@ export class StartedComponent implements OnInit {
 
   adddummy(){
 
-    this.user.nameFirst='Emanuel';
-    this.user.nameLast='Fonseca';
-    this.user.email='eman9997@yahoo.com';
-  
-    this.serserv.save(this.user);
 
     this.router.navigate(['/dashboard']);
   

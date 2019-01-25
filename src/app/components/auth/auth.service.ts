@@ -51,6 +51,10 @@ export class AuthService {
    //   console.log(this.value); this worked
   }
   getUid():string{
+    // firebase.auth().signOut()
+    // .then(
+    //   // after your signed out then go to loggin page 
+    // );
     return this.value=firebase.auth().currentUser.uid;
     
   }

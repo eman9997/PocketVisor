@@ -55,20 +55,22 @@
     //     padding-right: 9%;
     // }
 
-
+    span{
+        
+        white-space: nowrap;
+    }
     .largebox{
-        width: 110vw;
-        height: 110vh;
+       
         padding: 0%;
         font-size: 1.4em;
         font-weight: bold;
-       
+        // display: inline-block;
 
     }
     .box1{
         width: 18%;
         float: left;
-       
+        margin-right: 13%;
     }
     .box2{
         width: 18%;
@@ -86,3 +88,89 @@
         padding-right: 12%;
         
     }
+    .btn{
+        font-size: .48em;
+    }
+
+    // below is for all cell phones execpt 5s/5c
+
+    @media screen and (max-width: 700px) {
+        
+    .largebox{
+       
+        padding: 0%;
+        font-size: .9em;
+        font-weight: bold;
+       
+
+    }
+    .box1{
+        width: 18%;
+        float: left;
+        margin-right: 13%;
+    }
+    .box2{
+        width: 18%;
+        float: left;
+        
+    }
+    .box3{
+        width: 10%;
+        height: 8%;
+        float: left;
+        
+    }
+    .btn{
+        font-size: .5em;
+        
+    }
+    th{
+        font-size: .5em;
+        float: left;
+        padding-right: 14%;
+        
+    }
+
+      }
+
+    // THis is for the iphone SE
+
+    @media screen and (max-width: 347px) {
+        
+        .largebox{
+           
+            padding: 0%;
+            font-size: .8em;
+            font-weight: bold;
+           
+    
+        }
+        .box1{
+            width: 18%;
+            float: left;
+            margin-right: 13%;
+        }
+        .box2{
+            width: 18%;
+            float: left;
+            
+        }
+        .box3{
+            width: 10%;
+            height: 8%;
+            float: left;
+            
+        }
+        .btn{
+            font-size: .3em;
+        }
+        th{
+            font-size: .5em;
+            float: left;
+            padding-right: 14%;
+            
+        }
+    
+          }
+
+    

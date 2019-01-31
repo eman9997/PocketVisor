@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { FireserveService } from '../../services/fireserve.service';
 import { UserService } from '../../services/user.service';
 import { Server } from 'selenium-webdriver/safari';
+import {FlashMessagesService} from 'angular2-flash-messages'
 
 
 
@@ -32,7 +33,8 @@ export class AddClientComponent implements OnInit {
   constructor(
     private router: Router,
     private firebase:FireserveService,
-    private serserv: UserService
+    private serserv: UserService,
+    private Message:FlashMessagesService
 
     ) {
 
@@ -57,16 +59,17 @@ onSubmit(form: NgForm) {
   this.helper=this.HtmlAccountType.toLocaleUpperCase();
   this.HtmlAccountType=this.helper;
 
+
+ 
+  if(this.HtmlAccountType == 'SAVINGS' || this.HtmlAccountType == 'CHECKING' || this.HtmlAccountType == 'MORTGAGE' || this.HtmlAccountType == 'LOAN'|| this.HtmlAccountType == 'CREDIT CARD'){
+
   this.user.balance.unshift(this.HtmlBalance);
   this.user.accountType.unshift(this.HtmlAccountType);
-  this.user.APR.unshift(this.HtmlAPR);
-
-
+  this.user.APR.unshift(this.HtmlAPR); 
   this.user.nameFirst='Emanuel';
   this.user.nameLast='Fonseca';
-  this.user.email='eman9997@yahoo.com';
+  this.user.email='eman9997@yahoo.com';   
 
-  //  this.serserv.save(this.user);
 
   this.firebase.storeServers(this.user)
   .subscribe((response) =>{
@@ -76,11 +79,18 @@ onSubmit(form: NgForm) {
   }
     );
 
-    
+  } // end of if valid
+  
+
+  else{
+    this.Message.show('Input Not Valid, Must Enter: Credit Card or Loan or Checking or Savings or Heloc',{
+      cssClass: 'alert-danger', timeout: 8000  
+    });
+  }
  
 
 
-}
+} // end of submit area
 
 
 
@@ -91,11 +101,11 @@ onFetch(){
     (servers: User) =>{
       if (servers.balance === undefined || servers.balance.length == 0) {
         this.user=this.serserv.model();
-        console.log(servers.balance);
+        
        }
        if (servers.balance.length > 0) {
         this.user=servers
-        console.log(servers.balance);
+        
        }
       (error)=>{
         console.log(error) 

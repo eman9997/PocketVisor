@@ -11,7 +11,7 @@ export class AuthService {
   token:string;
   constructor(
     private ru:Router,
-    public Message:FlashMessagesService
+    private Message:FlashMessagesService
     ){ }
   
 

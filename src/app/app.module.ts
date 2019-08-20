@@ -23,6 +23,9 @@ import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 import { StartedComponent } from './components/started/started.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { BoxesComponent } from './components/boxes/boxes.component';
+
+
 
 
 
@@ -43,6 +46,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     GlossaryComponent,
     SavemoneyComponent,
     StartedComponent,
+    BoxesComponent,
+    
     
   ],
   imports: [

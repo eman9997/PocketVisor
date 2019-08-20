@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 import { StartedComponent } from './components/started/started.component';
+import { c } from '@angular/core/src/render3';
 
 
 
@@ -32,3 +33,6 @@ const routes: Routes = [
   declarations: []
 })
 export class AppRoutingModule { }
+
+
+

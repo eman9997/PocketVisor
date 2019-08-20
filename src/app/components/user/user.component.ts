@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {User} from './../../models/user.model';
-
 import {FireserveService} from './../../services/fireserve.service';
 import{AuthService} from '../auth/auth.service'
 import {Router} from '@angular/router'
@@ -33,11 +32,9 @@ user:User;
    
     this.fire.getlist().subscribe(
       (server:User)=>{
-      
         this.user=server;
-        
       },
-      (error)=> console.log(error)
+      (error)=> console.log("Problem getting your users from firebase error type: =>  "+error)
     );
 
  
@@ -46,7 +43,6 @@ user:User;
 
   login(){
     
-
   }
 
   onSave() {
@@ -71,7 +67,6 @@ user:User;
   this.user.balance.splice(this.inde,1);
   this.user.accountType.splice(this.inde,1);
   this.onSave();
-
  }
 
 }

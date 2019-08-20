@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Boxes</title>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <p class="display-4 heading">Choose the Type of Account you Want to Open</p>
+  </div>
+
+  <div class="container" #fade>
+    <div class="group mt-5 ">
+      <div class="row justify-content-between">
+        <a (click)="onClick('checking')" class="col-md-3 col-12 box" href="#">
+        Checking
+        </a>
+        <a (click)="onClick('Savings')" class="col-md-3 col-12 box" href="#">
+          Savings
+        </a>
+        <a (click)="onClick('Mortgage')" class="col-md-3 col-12 box" href="#">
+          Mortgage
+        </a>
+        
+      </div>
+      <div class="row justify-content-between mt-5">
+          <a (click)="onClick('Credit Card')" class="col-md-3 col-12 box" href="#">
+          Credit Card
+          </a>
+          <a (click)="onClick('CD')" class="col-md-3 col-12 box" href="#">
+          CD
+         </a>
+          <a (click)="onClick('Loan')" class="col-md-3 col-12 box" href="#">
+           Loan
+          </a>
+      </div>
+    </div>
+  </div> <!-- end of container -->
+
+</body>
+</html>

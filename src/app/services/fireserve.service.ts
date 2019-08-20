@@ -4,7 +4,6 @@ import { Server } from 'selenium-webdriver/safari';
 import {User} from './../models/user.model';
 import { database } from 'firebase';
 import {AuthService} from './../components/auth/auth.service';
-
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
@@ -14,17 +13,16 @@ export class FireserveService {
   url:string='https://list-86b44.firebaseio.com/';
   
     constructor(
-              private http: Http,
-              private uidFromUser: AuthService
-              ) {
-                
+      private http: Http,
+      private uidFromUser: AuthService) {
+              
                }
 
     storeServers(servers: User){
       const token =this.uidFromUser.getToken();
 
        return this.http.put(this.url+this.uidFromUser.getUid()+'/data.json?auth='+token, servers);
-       
+
     }
     getlist(){
       const token =this.uidFromUser.getToken();

@@ -7,9 +7,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FireserveService } from '../../services/fireserve.service';
 import { UserService } from '../../services/user.service';
-import { Server } from 'selenium-webdriver/safari';
 import {FlashMessagesService} from 'angular2-flash-messages'
-
+import { Server } from 'selenium-webdriver/safari';
 
 
 
@@ -44,7 +43,6 @@ export class AddClientComponent implements OnInit {
   // because feching on null breaks the code
      this.onFetch();
      
-
 }
 
 ngOnInit(){
@@ -78,7 +76,7 @@ onSubmit(form: NgForm) {
     this.router.navigate(['/dashboard']);
   }
     );
-
+    
   } // end of if valid
   
 
@@ -116,9 +114,6 @@ onFetch(){
 
   }
 
-check(){
-
-}
 
 
 

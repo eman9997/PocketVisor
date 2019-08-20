@@ -1,0 +1,43 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.box{
+    width: 15vw;
+    height: 20vh;
+    background: rgba(43, 85, 139,0.8);
+    text-align: center;
+    padding-top: 5%;
+    color: black;
+    font-weight: 800;
+    font-size: 2em;
+    border-radius: 30px;
+    border: 5px rgba(94, 91, 91,0.3) solid;
+}
+.heading{
+    text-align: center;
+    font-weight: 800;
+    
+}
+@media(max-width: 755px){
+ 
+    .box{
+        width: 10vw;
+        height: 15vh;
+        background: rgba(43, 85, 139,0.8);
+        text-align: center;
+        color: black;
+        font-weight: 800;
+        font-size: 2em;
+        padding-top: 5%;
+        border-radius: 30px;
+        border: 5px rgba(94, 91, 91,0.3) solid;
+        margin-bottom: 33px;
+    }
+  
+    .fade {
+        transition: all 4s;
+    }
+
+
+
+}

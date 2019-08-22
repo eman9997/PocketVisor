@@ -24,6 +24,7 @@ import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 import { StartedComponent } from './components/started/started.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { BoxesComponent } from './components/boxes/boxes.component';
+import { BoxService } from './services/box.service';
 
 
 
@@ -58,7 +59,7 @@ import { BoxesComponent } from './components/boxes/boxes.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [FireserveService, AuthService,UserService],
+  providers: [FireserveService, AuthService,UserService,BoxService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

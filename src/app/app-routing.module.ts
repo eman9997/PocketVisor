@@ -9,6 +9,7 @@ import { GlossaryComponent } from './components/glossary/glossary.component';
 import { SavemoneyComponent } from './components/savemoney/savemoney.component';
 import { StartedComponent } from './components/started/started.component';
 import { c } from '@angular/core/src/render3';
+import { BoxesComponent } from './components/boxes/boxes.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'savemoney', component: SavemoneyComponent},
   {path: 'glossary', component: GlossaryComponent},
   {path: 'started', component: StartedComponent},
+  {path: 'boxes', component: BoxesComponent},
   {path: '**', component: PageNotFoundComponent },
 ]
 

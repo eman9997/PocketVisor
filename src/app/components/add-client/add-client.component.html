@@ -16,33 +16,15 @@
 
 <div class="card">
   <div class="card-header">
-    Add Account
+    Add Account Details
   </div>
   <div class="card-body">
 
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-      <div class="form-group">
-        
-        <label for="Account">Account Type(Example Checking, Savings, Loan, Credit Card)</label>
-        <input 
-          type="text"
-          class="form-control" 
-          name="Account"
-          #clientAccount="ngModel"
-          placeholder="All lower case example 'Checking' "
-          [(ngModel)]="HtmlAccountType" 
-          minlength="2"
-          required
-          >
-      </div>
-
-      <div class="form-group">
-          
-        </div>
 
         <div class="form-group">
-            <label for="APR">Annual Percentage rate / Interest Yield</label>
+            <label for="APR">Annual Percentage Rate / Interest Yield</label>
             <input 
                 type="text"
                 class="form-control"

@@ -9,6 +9,7 @@ import { FireserveService } from '../../services/fireserve.service';
 import { UserService } from '../../services/user.service';
 import {FlashMessagesService} from 'angular2-flash-messages'
 import { Server } from 'selenium-webdriver/safari';
+import { BoxService } from '../../services/box.service';
 
 
 
@@ -24,17 +25,15 @@ import { Server } from 'selenium-webdriver/safari';
 export class AddClientComponent implements OnInit {
 
   user:User;
-  helper:string;
   HtmlBalance:number;
-  HtmlAccountType:string;
   HtmlAPR: number;
 
   constructor(
     private router: Router,
     private firebase:FireserveService,
     private serserv: UserService,
-    private Message:FlashMessagesService
-
+    private Message:FlashMessagesService,
+    public mytype:BoxService
     ) {
 
       this.user=this.serserv.model();
@@ -54,15 +53,13 @@ ngOnInit(){
 
 onSubmit(form: NgForm) {
 
-  this.helper=this.HtmlAccountType.toLocaleUpperCase();
-  this.HtmlAccountType=this.helper;
-
-
+  // this.helper=this.HtmlAccountType.toLocaleUpperCase();
+  // this.HtmlAccountType=this.helper;
  
-  if(this.HtmlAccountType == 'SAVINGS' || this.HtmlAccountType == 'CHECKING' || this.HtmlAccountType == 'MORTGAGE' || this.HtmlAccountType == 'LOAN'|| this.HtmlAccountType == 'CREDIT CARD'){
+  if(this.HtmlAPR < 12 || this.HtmlBalance > 9000000 ){
 
   this.user.balance.unshift(this.HtmlBalance);
-  this.user.accountType.unshift(this.HtmlAccountType);
+  this.user.accountType.unshift(this.mytype.accountType);
   this.user.APR.unshift(this.HtmlAPR); 
   this.user.nameFirst='Emanuel';
   this.user.nameLast='Fonseca';

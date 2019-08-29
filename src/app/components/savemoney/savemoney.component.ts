@@ -15,24 +15,23 @@ export class SavemoneyComponent implements OnInit {
   recommend:string[];  // where all the results are
    
   myset:any;
-  loanPrime:number=8;
+  loanPrime:number=10;
   calculate:number=0;
   helocPrime:number=5;
   mortPrime:number=4.7;
-  cdPrime:number=2;
+  cdPrime:number=1.8;
   autoPrime:number=4.9;
   buget:number=3000;
   user:User;
   str:string;
-  helocBoo:boolean=false;
+
 
  
   needsLoan:string='Your spending Too Much Money on Interest you will save money if you got a Loan. A Loans interest is only '+this.loanPrime+'% right now. If your still having trouble you can refer to the glossary located on dashboard page';
-  needsbalancetransfer:string='Your spending too much money on Interest you will save money if you did a balance transfer. If you think you can pay back your debt in a couple of months 6-20 months this is a good option. If you need more details check the glossary';
+  needsbalancetransfer:string='Your spending too much money on Interest you will save money if you did a balance transfer. If you think you can pay back your debt in a couple of months 12-20 months this is a good option. If you need more details check the glossary';
   needsSavings:string='You should move some Money to your savings or a CD. The rate for a CD is at Least '+this.cdPrime+'% Right Now';
   needsRefinance:string='You Should Refinance your House. Your paying to much interest on your mortgage. Look under Refinance in the glossary for more details';
   needsAutoRefi:string='Refinance your Autoloan, Your paying to much interest on your Autoloan. The Glossary will tell you the Many reason one may Refinance an Auto Loan';
-  needsHeloc:string='Since your Have a Mortgage and You have Debt you Should get a HELOC. A HELOC Has a better interest than a Loan or any Credit Card';
   needsLoanRefi:string='The Loan you have has a high interest rate. You might want to refinance it';
 
 
@@ -62,46 +61,33 @@ export class SavemoneyComponent implements OnInit {
     var i;
    for(i=0; i<this.user.balance.length; i++){
     
-
         // checking if a loan is needed
       if(this.user.APR[i]>this.loanPrime+2 && this.user.balance[i]>this.buget){
-        if(this.user.accountType[i] =='CREDIT CARD'){
+        if(this.user.accountType[i] =='Credit Card'){
           this.addtoArray(this.needsLoan);
          }
        
       }
       // needs a balance transfer
      if(this.user.APR[i]>this.loanPrime+2  && this.user.balance[i]>this.buget){
-       if(this.user.accountType[i] =='CREDIT CARD'){
+       if(this.user.accountType[i] =='Credit Card'){
         this.addtoArray(this.needsbalancetransfer);
        }
          
       }
       // savings account
-      if(this.user.balance[i] >this.buget && this.user.accountType[i] =='CHECKING'){
+      if(this.user.balance[i] >this.buget && this.user.accountType[i] =='Checking'){
         this.addtoArray(this.needsSavings);
       }
       // Refinance
-      if(this.user.APR[i]>this.mortPrime+1 && this.user.accountType[i] =='MORTGAGE'){
+      if(this.user.APR[i]>this.mortPrime+1 && this.user.accountType[i] =='Mortgage'){
         this.addtoArray(this.needsRefinance);
       }
-      //autoRefinance
-      if(this.user.APR[i]>this.autoPrime+1 && this.user.accountType[i] =='AUTO LOAN'){
-        this.addtoArray(this.needsAutoRefi);
-      }
+     
       //refiLoan
-      if(this.user.APR[i]>this.loanPrime+1 && this.user.accountType[i] =='LOAN'){
+      if(this.user.APR[i]>this.loanPrime+1 && this.user.accountType[i] =='Loan'){
         this.addtoArray(this.needsLoanRefi);
       }
-      //Heloc
-      if(this.user.accountType[i] =='CREDIT CARD' || this.user.accountType[i] =='LOAN'){
-          this.calculateHeloc(this.user.balance[i]);
-            if(this.helocBoo){
-              if(this.check()){
-                this.addtoArray(this.needsHeloc);
-              }
-            }
-      } // end of HELOC Method
     
       
    } // end of for loop
@@ -118,27 +104,7 @@ export class SavemoneyComponent implements OnInit {
     this.myset=new Set(this.recommend);
     this.recommend=Array.from(this.myset);
   }
-  calculateHeloc(num){
-   this.calculate += num;
-   if(this.calculate>9999){
-     this.helocBoo=true;
-   }
-   else{
-    this.helocBoo=false;
-   }
 
-  }
-  check(){
-     var k;
-      for(k=0; k<this.user.balance.length; k++){
-
-        if(this.user.accountType[k] =='MORTGAGE'){
-          return true;
-        }
-        else{
-          return false;
-        }
-      }
-  } // end of check
+ 
 
 }

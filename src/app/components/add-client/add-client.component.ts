@@ -56,7 +56,7 @@ onSubmit(form: NgForm) {
   // this.helper=this.HtmlAccountType.toLocaleUpperCase();
   // this.HtmlAccountType=this.helper;
  
-  if(this.HtmlAPR < 12 || this.HtmlBalance > 9000000 ){
+  if(this.HtmlAPR < 30 || this.HtmlBalance > 9000000 ){
 
   this.user.balance.unshift(this.HtmlBalance);
   this.user.accountType.unshift(this.mytype.accountType);
